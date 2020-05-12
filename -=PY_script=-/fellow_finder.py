@@ -876,7 +876,7 @@ class FellowFinder:
                 # вставим таблицу с поездками выходных дней
                 paragraph = document.add_paragraph()
                 paragraph.alignment = WD_PARAGRAPH_ALIGNMENT.CENTER
-                font = paragraph.add_run(f'Поездки в выходные дни (Пятница, Суббота, Воскресенье)\n'
+                font = paragraph.add_run(f'Поездки в пятницу и выходные дни (Пятница, Суббота, Воскресенье)\n'
                                          f'(последние {len(trips)} поездок)')
                 font.bold = True
                 # создадим таблицу
@@ -893,7 +893,7 @@ class FellowFinder:
         # если есть заграничные города:
         if self.abroad_trips:
             # todo добавить определение страны, можно тоже по яндекс.api
-            document.add_heading('Пребывание за границией', 0)
+            document.add_heading('Пребывание за границей (на основании информации о приобретенных билетах)', 0)
             table1 = document.add_table(rows=(len(self.abroad_trips) + 1), cols=2)
             table1.allow_autofit = True
             hdr_cells = table1.rows[0].cells
